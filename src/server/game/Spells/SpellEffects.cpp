@@ -4257,7 +4257,7 @@ void Spell::EffectCharge()
         if (!m_preGeneratedPath)
         {
             //unitTarget->GetContactPoint(m_caster, pos.m_positionX, pos.m_positionY, pos.m_positionZ);
-            Position pos = unitTarget->GetFirstCollisionPosition(unitTarget->GetCombatReach(), unitTarget->GetRelativeAngle(m_caster));
+            Position pos = unitTarget->GetFirstCollisionPosition(unitCaster->GetCombatReach() + unitTarget->GetCombatReach(), unitTarget->GetRelativeAngle(m_caster));
             unitCaster->GetMotionMaster()->MoveCharge(pos.m_positionX, pos.m_positionY, pos.m_positionZ, speed);
         }
         else
